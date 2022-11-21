@@ -4,6 +4,16 @@
     ViewBag.Title = "Login";
 }
 
+
+<h1>Login</h1>
+
+@if (ViewData.Keys.Contains("Mensaje"))
+{
+    <div class="alert alert-danger">
+        @ViewData["Mensaje"]
+    </div>
+}
+
 <div class="card">
     <div class="card-body">
         <form asp-action="login">
