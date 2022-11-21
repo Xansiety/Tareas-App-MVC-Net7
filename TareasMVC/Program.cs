@@ -11,7 +11,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer("name=DefaultConnection"));
 
-// Identity
+// Identity services
 builder.Services.AddAuthentication();
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(opciones =>
     opciones.SignIn.RequireConfirmedAccount = false)
