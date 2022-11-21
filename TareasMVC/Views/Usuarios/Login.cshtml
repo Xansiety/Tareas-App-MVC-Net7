@@ -36,7 +36,15 @@
             </div>
             
             <button class="btn btn-outline-primary">Login</button>
-            <a class="btn btn-success" asp-action="Registro">Registrarme</a>
+            <a class="btn btn-success " asp-action="Registro">Registrarme</a>
+            <br />
+
+            <div class="row mt-3">
+                <a class="btn btn-outline-success" asp-action="LoginExterno" asp-route-proveedor="Microsoft">
+                    Continuar con Microsoft
+                </a>
+            </div>
+          
         </form>
     </div>
 </div>
