@@ -1,0 +1,54 @@
+﻿@model LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<h1>Login</h1>
+
+@if (ViewData.Keys.Contains("Mensaje"))
+{
+    <div class="alert alert-danger">
+        @ViewData["Mensaje"]
+    </div>
+}
+
+<div class="card">
+    <div class="card-body">
+        <form asp-action="login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" autocomplete="off" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-check mb-3">
+               
+                <input class="form-check-input" type="checkbox" asp-for="Recuerdame" />
+                <label class="form-check-label" asp-for="Recuerdame"></label>
+            </div>
+            
+            <button class="btn btn-outline-primary">Login</button>
+            <a class="btn btn-success " asp-action="Registro">Registrarme</a>
+            <br />
+
+            <div class="row mt-3">
+                <a class="btn btn-outline-success" asp-action="LoginExterno" asp-route-proveedor="Microsoft">
+                    Continuar con Microsoft
+                </a>
+            </div>
+          
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+}
